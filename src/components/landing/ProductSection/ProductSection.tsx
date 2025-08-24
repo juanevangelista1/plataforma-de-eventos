@@ -1,16 +1,17 @@
-import { Card } from '@/components/ui/Card';
-import ImageDashboard from '../../../../public/images/ProductSection/Image-Dashboard.jpeg';
-import ImageUser from '../../../../public/images/ProductSection/Image-gestão-usuario.jpeg';
-import ImageEvent from '../../../../public/images/ProductSection/Image-Gestão.jpeg';
 import Image from 'next/image';
+import React from 'react'; // Import React to use cloneElement
+
+// Importe suas imagens
+import ImageDashboard from '../../../../public/images/ProductSection/Image-Dashboard.jpeg';
+import ImageEvent from '../../../../public/images/ProductSection/Image-Gestão.jpeg';
+import ImageUser from '../../../../public/images/ProductSection/Image-gestão-usuario.jpeg';
 
 const benefits = [
 	{
-		icon: (
+		image: (
 			<Image
 				src={ImageDashboard}
-				alt='Dashboard'
-				className='w-40 h-20'
+				alt='Dashboard da plataforma'
 			/>
 		),
 		title: 'Decisões Baseadas em Dados',
@@ -18,11 +19,10 @@ const benefits = [
 			'Acompanhe receita, taxa de vendas e check-ins em tempo real com um dashboard completo e intuitivo.',
 	},
 	{
-		icon: (
+		image: (
 			<Image
-				src={ImageUser}
-				alt='Dashboard'
-				className='w-40 h-20'
+				src={ImageEvent}
+				alt='Tela de gestão de eventos'
 			/>
 		),
 		title: 'Gestão de Eventos Centralizada',
@@ -30,43 +30,46 @@ const benefits = [
 			'Gerencie todos os seus eventos, detalhes e locais a partir de um único painel de controle, sem complicações.',
 	},
 	{
-		icon: (
+		image: (
 			<Image
-				src={ImageEvent}
-				alt='Dashboard'
-				className='w-40 h-20'
+				src={ImageUser}
+				alt='Tela de gestão de usuários'
 			/>
 		),
-		title: 'Controle Total da sua Equipe',
+		title: 'Controle Total dos Usuários',
 		description:
-			'Adicione membros da sua equipe, defina suas funções e controle permissões de acesso de forma simples e segura.',
+			'Gerencie permissões e acessos de usuários com facilidade, garantindo segurança e eficiência na administração do seu evento.',
 	},
 ];
 
 export function ProductSection() {
 	return (
-		<section
-			id='benefits'
-			className='py-20 px-4'>
-			<div className='text-center mb-12 max-w-3xl mx-auto'>
-				<h2 className='text-3xl sm:text-4xl font-bold text-white'>
-					Controle Total do Seu Evento, do Início ao Fim
-				</h2>
-				<p className='text-gray-400 mt-2 text-lg'>
-					Tudo que você precisa para transformar seu evento em um sucesso.
-				</p>
-			</div>
-			<div className='max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8'>
-				{benefits.map((benefit) => (
-					<Card
-						key={benefit.title}
-						className='p-8 text-center md:text-left hover:shadow-2xl hover:scale-105 transition-all duration-300'>
-						<div className='mb-4'>{benefit.icon}</div>
-						<h3 className='text-xl font-semibold mb-2 text-white'>{benefit.title}</h3>
-						<p className='text-gray-400'>{benefit.description}</p>
-					</Card>
-				))}
-			</div>
-		</section>
+		<div className='flex flex-col mt-10 md:mt-20 gap-20 lg:max-w-7xl mx-auto p-4 md:p-0'>
+			{benefits.map((benefit, benefitIndex) => (
+				<section
+					className='bg-gray-800 overflow-hidden rounded-3xl z-0 after:-z-10 after:content-[""] after:absolute after:inset-0 after:outline-2 after:-outline-offset-2 after:rounded-3xl after:outline-white/20 after:pointer-events-none pb-0 px-8 pt-8 md:pt-12 md:px-10 lg:pt-16 lg:pr-6 sticky'
+					key={benefit.title}
+					style={{
+						top: `calc(64px + ${benefitIndex * 40}px)`,
+					}}>
+					<div className='lg:grid lg:grid-cols-[minmax(0,_384px)_1fr] lg:gap-24'>
+						<div className='lg:pb-16 lg:max-w-96'>
+							<h3 className='font-serif text-2xl mt-2 md:text-4xl md:mt-5 text-white'>{benefit.title}</h3>
+							<hr className='border-t-2 border-white/5 mt-4 md:mt-5' />
+							<p className='text-gray-400 mt-4'>{benefit.description}</p>
+						</div>
+
+						<div className='relative'>
+							<div className='mt-8 -mb-16 md:-mb-24 lg:mt-0 lg:absolute lg:inset-0'>
+								{React.cloneElement(benefit.image, {
+									className:
+										'w-full h-full object-cover rounded-xl lg:translate-x-10 transition-transform duration-500',
+								})}
+							</div>
+						</div>
+					</div>
+				</section>
+			))}
+		</div>
 	);
 }

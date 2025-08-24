@@ -23,7 +23,7 @@ export function PricingSection() {
 						<h3 className='text-xl font-semibold text-white'>{tier.name}</h3>
 						<p className='text-4xl font-bold my-4 text-white'>
 							{tier.price}
-							<span className='text-sm font-normal text-gray-400'>/mês</span>
+							<span className='text-sm font-normal text-gray-400'> / mês</span>
 						</p>
 						<ul className='space-y-3 mb-6 flex-grow text-gray-300'>
 							{tier.features.map((feature) => (
@@ -36,8 +36,8 @@ export function PricingSection() {
 							))}
 						</ul>
 						<Button
-							variant='outline'
-							className='w-full'>
+							variant='ghost'
+							className='mx-auto w-full rounded-lg px-6 py-3 font-semibold text-white shadow-md bg-gradient-to-r from-[#4d7ab6] to-[#004aad] hover:shadow-xl hover:-translate-y-0.5 active:scale-95 transition-all duration-300'>
 							Assinar
 						</Button>
 					</Card>

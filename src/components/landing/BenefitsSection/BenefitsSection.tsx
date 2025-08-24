@@ -1,5 +1,5 @@
 import { Card } from '@/components/ui/Card';
-import { Zap, Users, BarChartBig, ClipboardList } from 'lucide-react';
+import { Zap, Users, BarChartBig, ClipboardList, Rocket } from 'lucide-react';
 
 const benefits = [
 	{
@@ -35,7 +35,7 @@ export function BenefitsSection() {
 					Controle Total do Seu Evento, do Início ao Fim
 				</h2>
 				<p className='text-gray-400 mt-2 text-lg sm:text-xl'>
-					Tudo que você precisa para transformar seu evento em um sucesso.
+					Tudo que você precisa para transformar seu evento em um sucesso.{' '}
 				</p>
 			</div>
 
