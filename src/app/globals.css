@@ -32,6 +32,19 @@ body {
   }
 }
 
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee {
+  animation: marquee 35s linear infinite;
+}
+
 .card-neon-border {
   position: relative;
   border-radius: 1.5rem; 
@@ -84,7 +97,7 @@ body {
     background-color: var(--color-one); 
     transform: scaleX(0);
     transform-origin: bottom right;
-    transition: transform 0.3s ease-out;
+    transition: transform 0.4s ease-out;
   }
 
   .hover-underline-animation:hover::after {
