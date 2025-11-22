@@ -27,7 +27,7 @@ export const CarouselWrapper = styled.div`
 	}
 
 	.swiper-pagination-bullet-active {
-		background: #10b981;
+		background: #0061e1;
 		opacity: 1;
 		width: 24px;
 		border-radius: 4px;
