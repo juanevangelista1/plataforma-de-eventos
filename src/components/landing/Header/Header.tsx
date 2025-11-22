@@ -1,13 +1,13 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
-import { Rocket, Menu, X } from 'lucide-react';
+import { Rocket, Menu, X, Calendar, LogIn, CircleDollarSign, CirclePercent } from 'lucide-react';
 
 export function Header() {
 	const [isOpen, setIsOpen] = useState(false);
 
 	return (
-		<header className='fixed top-0 z-50 w-full border-b border-gray-900 bg-background/80 p-4 backdrop-blur'>
+		<header className='fixed top-0 z-50 w-full border-b border-gray-900 bg-background/80 py-4 px-8 backdrop-blur'>
 			<div className='container mx-auto flex justify-between items-center'>
 				<Link
 					href='/'
@@ -19,17 +19,26 @@ export function Header() {
 				<nav className='hidden md:flex items-center gap-8 text-sm'>
 					<Link
 						href='#benefits'
-						className='transition-colors hover:text-foreground/80 hover:text-gray-300 hover-underline-animation'>
+						className='flex items-center gap-2 transition-colors hover:text-foreground/80 hover:text-gray-300 hover-underline-animation'>
+						<CirclePercent size={18} />
 						Benefícios
 					</Link>
 					<Link
 						href='#pricing'
-						className='transition-colors hover:text-foreground/80 hover:text-gray-300 hover-underline-animation'>
+						className='flex items-center gap-2 transition-colors hover:text-foreground/80 hover:text-gray-300 hover-underline-animation'>
+						<CircleDollarSign size={18} />
 						Preços
 					</Link>
 					<Link
+						href='#pricing'
+						className='flex items-center gap-2 transition-colors hover:text-foreground/80 hover:text-gray-300 hover-underline-animation'>
+						<Calendar size={18} />
+						Criar o seu evento
+					</Link>
+					<Link
 						href='/login'
-						className='transition-colors hover:text-foreground/80 hover:text-gray-300 hover-underline-animation'>
+						className='flex items-center gap-2 transition-colors hover:text-foreground/80 hover:text-gray-300 hover-underline-animation'>
+						<LogIn size={18} />
 						Login
 					</Link>
 				</nav>
