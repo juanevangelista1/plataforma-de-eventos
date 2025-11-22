@@ -3,6 +3,7 @@
 import React, { useMemo } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Pagination, Navigation, Autoplay } from 'swiper/modules';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 import {
 	SectionContainer,
@@ -11,6 +12,8 @@ import {
 	InfoContainer,
 	Title,
 	Description,
+	NavButton,
+	GlowEffect,
 } from './styles';
 
 import 'swiper/css';
@@ -25,22 +28,26 @@ const PRODUCT_BENEFITS = [
 	{
 		id: '1',
 		title: 'Decisões Baseadas em Dados',
-		description:
-			'Acompanhe receita, taxa de vendas e check-ins em tempo real com um dashboard completo e intuitivo.',
+		description: 'Acompanhe receita e vendas em tempo real.',
 		image: ImageDashboard,
 	},
 	{
 		id: '2',
-		title: 'Gestão de Eventos Centralizada',
-		description:
-			'Gerencie todos os seus eventos, detalhes e locais a partir de um único painel de controle.',
+		title: 'Gestão Centralizada',
+		description: 'Controle todos os detalhes em um painel.',
 		image: ImageEvent,
 	},
 	{
 		id: '3',
-		title: 'Controle Total dos Usuários',
-		description: 'Gerencie permissões e acessos de usuários com facilidade e segurança.',
+		title: 'Controle de Usuários',
+		description: 'Gerencie permissões com segurança.',
 		image: ImageUser,
+	},
+	{
+		id: '4',
+		title: 'Relatórios Financeiros',
+		description: 'Exportação detalhada para contabilidade.',
+		image: ImageDashboard,
 	},
 ];
 
@@ -56,10 +63,14 @@ export function ProductCarouselSection() {
 			coverflowEffect: {
 				rotate: 0,
 				stretch: 0,
-				depth: 150,
+				depth: 350,
 				modifier: 1.5,
 				slideShadows: true,
-				scale: 0.85,
+				scale: 1.2,
+			},
+			navigation: {
+				nextEl: '.custom-next',
+				prevEl: '.custom-prev',
 			},
 			pagination: { clickable: true },
 			modules: [EffectCoverflow, Pagination, Navigation, Autoplay],
@@ -70,6 +81,30 @@ export function ProductCarouselSection() {
 	return (
 		<SectionContainer>
 			<CarouselWrapper>
+				<GlowEffect />
+				<div className='text-center mb-12 max-w-3xl mx-auto'>
+					<h2 className='text-3xl sm:text-4xl font-bold text-white'>
+						Controle Total do Seu Evento, do Início ao Fim
+					</h2>
+					<p className='text-gray-400 mt-2 text-lg sm:text-xl'>
+						Tudo que você precisa para transformar seu evento em um sucesso.{' '}
+					</p>
+				</div>
+
+				<NavButton className='custom-prev'>
+					<ChevronLeft
+						size={24}
+						strokeWidth={2.5}
+					/>
+				</NavButton>
+
+				<NavButton className='custom-next'>
+					<ChevronRight
+						size={24}
+						strokeWidth={2.5}
+					/>
+				</NavButton>
+
 				<Swiper {...swiperConfig}>
 					{PRODUCT_BENEFITS.map((benefit) => (
 						<SwiperSlide
