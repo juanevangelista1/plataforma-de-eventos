@@ -20,34 +20,30 @@ import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 
-import ImageDashboard from '../../../../public/images/ProductSection/Image-Dashboard.jpeg';
-import ImageEvent from '../../../../public/images/ProductSection/Image-Gestão.jpeg';
-import ImageUser from '../../../../public/images/ProductSection/Image-gestão-usuario.jpeg';
-
 const PRODUCT_BENEFITS = [
 	{
 		id: '1',
 		title: 'Decisões Baseadas em Dados',
 		description: 'Acompanhe receita e vendas em tempo real.',
-		image: ImageDashboard,
+		image: '/images/ProductSection/Image-Dashboard.jpeg',
 	},
 	{
 		id: '2',
 		title: 'Gestão Centralizada',
 		description: 'Controle todos os detalhes em um painel.',
-		image: ImageEvent,
+		image: '/images/ProductSection/Image-Gestão.jpeg',
 	},
 	{
 		id: '3',
 		title: 'Controle de Usuários',
 		description: 'Gerencie permissões com segurança.',
-		image: ImageUser,
+		image: '/images/ProductSection/Image-gestão-usuario.jpeg',
 	},
 	{
 		id: '4',
 		title: 'Relatórios Financeiros',
 		description: 'Exportação detalhada para contabilidade.',
-		image: ImageDashboard,
+		image: '/images/ProductSection/Image-Dashboard.jpeg',
 	},
 ];
 
@@ -110,7 +106,7 @@ export function ProductCarouselSection() {
 						<SwiperSlide
 							key={benefit.id}
 							style={{ width: 'auto', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-							<EventCard $bgImage={benefit.image.src} />
+							<EventCard $bgImage={benefit.image} />
 
 							<InfoContainer>
 								<Title>{benefit.title}</Title>
