@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Eventa: Plataforma de Gestão e Venda de Eventos
 
-## Getting Started
+Este projeto é uma landing Page para uma plataforma moderna para gerenciamento e venda de ingressos para eventos, construída com Next.js e focada em performance, design responsivo e experiência do usuário. A arquitetura segue os princípios de software de alto nível (SOLID, DRY) e utiliza as melhores práticas do ecossistema React/Next.js.
 
-First, run the development server:
+## 🌟 Visão Geral
+
+A plataforma Eventa oferece:
+
+- **Controle Total do Evento:** Um dashboard intuitivo para acompanhamento em tempo real de métricas críticas (receita, taxa de vendas, check-ins, usuários ativos).
+- **Gestão Simplificada:** Seções dedicadas para gerenciamento de eventos e usuários.
+- **Landing Page de Alta Conversão:** Uma página inicial atraente, com seções de Benefícios, Carrossel de Produtos e Precificação, desenhada para engajar o usuário.
+
+## 🛠️ Tecnologias
+
+- **Framework:** [Next.js](https://nextjs.org/) (v15.4.6)
+- **Linguagem:** [TypeScript](https://www.typescriptlang.org/) (v5)
+- **Estilização:** [Tailwind CSS](https://tailwindcss.com/) (v4) e [styled-components](https://styled-components.com/) (v6)
+- **Gerenciador de Pacotes:** pnpm
+- **Componentes de UI:** `class-variance-authority` (CVA) e Radix UI (`@radix-ui/react-slot`).
+
+## ⚙️ Configuração e Inicialização
+
+Certifique-se de ter o [Node.js](https://nodejs.org/) (v18+) e o [pnpm](https://pnpm.io/) instalados.
+
+### 1. Clonar o Repositório
+
+````bash
+git clone https://github.com/juanevangelista1/plataforma-de-eventos
+cd plataforma-de-eventos
+
+
+```markdown
+# 🚀 Eventa: Event Management and Sales Platform
+
+This project is a modern platform for managing and selling tickets for events, built with Next.js and focused on performance, responsive design, and user experience. The architecture follows high-level software principles (SOLID, DRY) and utilizes best practices from the React/Next.js ecosystem.
+
+## 🌟 Overview
+
+The Eventa platform offers:
+
+* **Total Event Control:** An intuitive dashboard for real-time tracking of critical metrics (revenue, sales rate, check-ins, active users).
+* **Simplified Management:** Dedicated sections for event and user management.
+* **High-Conversion Landing Page:** An attractive homepage featuring Benefits, Product Carousel, and Pricing sections, designed to engage users.
+
+## 🛠️ Technologies
+
+* **Framework:** [Next.js](https://nextjs.org/) (v15.4.6)
+* **Language:** [TypeScript](https://www.typescriptlang.org/) (v5)
+* **Styling:** [Tailwind CSS](https://tailwindcss.com/) (v4) and [styled-components](https://styled-components.com/) (v6)
+* **Package Manager:** pnpm
+* **UI Components:** `class-variance-authority` (CVA) and Radix UI (`@radix-ui/react-slot`).
+
+## ⚙️ Setup and Installation
+
+Ensure you have [Node.js](https://nodejs.org/) (v18+) and [pnpm](https://pnpm.io/) installed.
+
+### 1. Clone the Repository
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+git clone https://github.com/juanevangelista1/plataforma-de-eventos
+cd plataforma-de-eventos
+````
